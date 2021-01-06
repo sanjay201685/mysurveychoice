@@ -29,7 +29,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => '7c90d294ebc018cd0c3bf2a59ecd97b93930520c',
+    'reference' => 'f78d8c853630ef5431e264a12eccbdf6634a879f',
     'name' => 'drupal-composer/drupal-project',
   ),
   'versions' => 
@@ -309,7 +309,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => '7c90d294ebc018cd0c3bf2a59ecd97b93930520c',
+      'reference' => 'f78d8c853630ef5431e264a12eccbdf6634a879f',
     ),
     'drupal/action' => 
     array (
@@ -331,6 +331,15 @@ private static $installed = array (
       array (
         0 => '9.1.0',
       ),
+    ),
+    'drupal/backup_migrate' => 
+    array (
+      'pretty_version' => '5.0.0-rc2',
+      'version' => '5.0.0.0-RC2',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '5.0.0-rc2',
     ),
     'drupal/ban' => 
     array (
