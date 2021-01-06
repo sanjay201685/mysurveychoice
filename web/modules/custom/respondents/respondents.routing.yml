@@ -1,0 +1,31 @@
+entity.respondents_term.canonical:
+  path: '/admin/respondents/{respondents_term}'
+  defaults:
+    _entity_view: 'respondents_term'
+    _title: 'Respondents Content'
+  requirements:
+    _entity_access: 'respondents_term.view'
+
+entity.respondents.term_add:
+  path: '/admin/respondents/add'
+  defaults:
+    _entity_form: respondents_term.add
+    _title: 'Add Respondents Content'
+  requirements:
+    _entity_create_access: 'respondents_term'
+
+entity.respondents_term.edit_form:
+  path: '/admin/respondents/{respondents_term}/edit'
+  defaults:
+    _entity_form: respondents_term.edit
+    _title: 'Edit Respondents Content'
+  requirements:
+    _entity_access: 'respondents_term.edit'
+
+entity.respondents_term.delete_form:
+  path: '/admin/respondents/{respondents_term}/delete'
+  defaults:
+    _entity_form: respondents_term.delete
+    _title: 'Delete Respondents Content'
+  requirements:
+    _entity_access: 'respondents_term.delete'

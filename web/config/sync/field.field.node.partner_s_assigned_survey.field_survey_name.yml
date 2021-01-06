@@ -1,0 +1,29 @@
+uuid: e5558850-d8ba-4c38-9a5c-1f2bde542dff
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_survey_name
+    - node.type.partner_s_assigned_survey
+    - node.type.survey
+id: node.partner_s_assigned_survey.field_survey_name
+field_name: field_survey_name
+entity_type: node
+bundle: partner_s_assigned_survey
+label: 'Survey Name'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      survey: survey
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

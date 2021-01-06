@@ -1,0 +1,23 @@
+uuid: de78da7d-e6f6-44ac-94c1-0299baecaf99
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_completes_required
+    - node.type.survey
+id: node.survey.field_completes_required
+field_name: field_completes_required
+entity_type: node
+bundle: survey
+label: 'Completes Required'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

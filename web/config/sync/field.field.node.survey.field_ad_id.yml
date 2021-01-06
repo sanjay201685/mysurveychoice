@@ -1,0 +1,21 @@
+uuid: c251e199-9fcd-4be3-94e1-3b66927e9bd6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ad_id
+    - node.type.survey
+  module:
+    - options
+id: node.survey.field_ad_id
+field_name: field_ad_id
+entity_type: node
+bundle: survey
+label: 'Ad ID'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

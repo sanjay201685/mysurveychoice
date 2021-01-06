@@ -1,0 +1,18 @@
+uuid: 699ee093-05d9-419b-a912-973bfc79419b
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.company_partner
+id: node.company_partner.title
+field_name: title
+entity_type: node
+bundle: company_partner
+label: 'Company/Partner Name'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,20 @@
+uuid: 69edfa88-7b03-4f47-8883-b1c46e36623e
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - user
+id: node.field_company_partner_person
+field_name: field_company_partner_person
+entity_type: node
+type: entity_reference
+settings:
+  target_type: user
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

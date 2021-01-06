@@ -1,0 +1,4 @@
+name: respondents
+type: module
+description: Respondents
+core_version_requirement: ^8.8 || ^9

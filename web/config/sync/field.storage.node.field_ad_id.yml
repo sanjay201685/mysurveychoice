@@ -1,0 +1,24 @@
+uuid: 15678ef9-2723-4e9b-a17e-5d677955da72
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_ad_id
+field_name: field_ad_id
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: PARTNER
+      label: 'PARTNER - Partner Project'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,19 @@
+uuid: a83b8396-b602-4495-b18a-ec4a663983d0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tax_details
+    - node.type.company_partner
+id: node.company_partner.field_tax_details
+field_name: field_tax_details
+entity_type: node
+bundle: company_partner
+label: 'Tax Details'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

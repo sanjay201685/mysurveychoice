@@ -1,0 +1,23 @@
+uuid: 3897a36a-1016-4351-ab22-a0c08cc51374
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_cpi
+    - node.type.survey
+id: node.survey.field_cpi
+field_name: field_cpi
+entity_type: node
+bundle: survey
+label: CPI
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

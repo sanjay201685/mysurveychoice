@@ -1,0 +1,17 @@
+uuid: fec0d02e-2c79-40fe-a74c-d1c76996bb52
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Partner''s Assigned Survey'
+type: partner_s_assigned_survey
+description: 'Assign partner with survey.'
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: false

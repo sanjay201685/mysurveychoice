@@ -1,0 +1,19 @@
+uuid: 79ede1fe-b274-4755-90d4-c14944b946a1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_completes_redirect
+    - node.type.partner_s_assigned_survey
+id: node.partner_s_assigned_survey.field_completes_redirect
+field_name: field_completes_redirect
+entity_type: node
+bundle: partner_s_assigned_survey
+label: 'Completes Redirect'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

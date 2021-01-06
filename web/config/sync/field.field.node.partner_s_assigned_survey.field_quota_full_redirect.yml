@@ -1,0 +1,19 @@
+uuid: f544dc92-7737-4d2e-8477-79d2014cdb32
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_quota_full_redirect
+    - node.type.partner_s_assigned_survey
+id: node.partner_s_assigned_survey.field_quota_full_redirect
+field_name: field_quota_full_redirect
+entity_type: node
+bundle: partner_s_assigned_survey
+label: 'Quota-full Redirect'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

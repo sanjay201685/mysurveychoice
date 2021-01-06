@@ -1,0 +1,27 @@
+uuid: 5900bfbb-deb9-418a-b6bd-0a85eb70314a
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_is_company_partner_
+field_name: field_is_company_partner_
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: Company
+      label: Company
+    -
+      value: Partner
+      label: Partner
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 2
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

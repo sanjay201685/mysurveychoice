@@ -1,0 +1,9 @@
+uuid: 59814df3-fd08-4356-943a-6a3d71583d3d
+langcode: en
+status: true
+dependencies: {  }
+id: partner
+label: Partner
+weight: 3
+is_admin: null
+permissions: {  }

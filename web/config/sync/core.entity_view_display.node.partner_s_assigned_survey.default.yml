@@ -1,0 +1,73 @@
+uuid: 56d194fb-2ea2-4c75-afbc-fcfe10fda688
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.partner_s_assigned_survey.field_company_name
+    - field.field.node.partner_s_assigned_survey.field_completes_redirect
+    - field.field.node.partner_s_assigned_survey.field_partner_name
+    - field.field.node.partner_s_assigned_survey.field_quota_full_redirect
+    - field.field.node.partner_s_assigned_survey.field_survey_name
+    - field.field.node.partner_s_assigned_survey.field_terminates_redirect
+    - node.type.partner_s_assigned_survey
+  module:
+    - user
+id: node.partner_s_assigned_survey.default
+targetEntityType: node
+bundle: partner_s_assigned_survey
+mode: default
+content:
+  field_company_name:
+    weight: 103
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_completes_redirect:
+    weight: 104
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_partner_name:
+    weight: 101
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_quota_full_redirect:
+    weight: 106
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_survey_name:
+    weight: 102
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_terminates_redirect:
+    weight: 105
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

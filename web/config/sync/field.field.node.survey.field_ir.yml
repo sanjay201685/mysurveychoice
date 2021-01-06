@@ -1,0 +1,23 @@
+uuid: 2fb297a6-b231-4a9c-8d9a-56b3151556c7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ir
+    - node.type.survey
+id: node.survey.field_ir
+field_name: field_ir
+entity_type: node
+bundle: survey
+label: IR
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

@@ -1,0 +1,22 @@
+uuid: 366bf49f-9111-43bf-8d8d-c0f59d5b4474
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.partner_s_assigned_survey
+id: node.partner_s_assigned_survey.promote
+field_name: promote
+entity_type: node
+bundle: partner_s_assigned_survey
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

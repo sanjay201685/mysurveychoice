@@ -29,7 +29,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => '14bdb8ccb3eb374aa512b27324d89f7e907e2899',
+    'reference' => '7c90d294ebc018cd0c3bf2a59ecd97b93930520c',
     'name' => 'drupal-composer/drupal-project',
   ),
   'versions' => 
@@ -309,7 +309,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => '14bdb8ccb3eb374aa512b27324d89f7e907e2899',
+      'reference' => '7c90d294ebc018cd0c3bf2a59ecd97b93930520c',
     ),
     'drupal/action' => 
     array (
@@ -1118,6 +1118,15 @@ private static $installed = array (
       array (
         0 => '9.1.0',
       ),
+    ),
+    'drupal/views_autocomplete_filters' => 
+    array (
+      'pretty_version' => '1.3.0',
+      'version' => '1.3.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '8.x-1.3',
     ),
     'drupal/views_ui' => 
     array (

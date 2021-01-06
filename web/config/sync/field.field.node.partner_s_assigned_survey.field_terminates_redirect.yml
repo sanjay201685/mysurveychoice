@@ -1,0 +1,19 @@
+uuid: 6ba554be-5e0a-45b8-997a-c53185f4ada6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_terminates_redirect
+    - node.type.partner_s_assigned_survey
+id: node.partner_s_assigned_survey.field_terminates_redirect
+field_name: field_terminates_redirect
+entity_type: node
+bundle: partner_s_assigned_survey
+label: 'Terminates Redirect'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,15 @@
+uuid: 3b6f1823-be99-4d7f-ac78-a1c87bc198aa
+name: MySurvey
+mail: rakesh@rakesh.com
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /node
+admin_compact_mode: false
+weight_select_max: 100
+langcode: en
+default_langcode: en
+_core:
+  default_config_hash: yTxtFqBHnEWxQswuWvkjE8mKw2t8oKuCL1q8KnfHuGE
+mail_notification: ''
