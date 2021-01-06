@@ -133,10 +133,10 @@ class Term extends ContentEntityBase {
       ->setDisplayConfigurable('view', TRUE);
     
     $fields['survey_id'] = BaseFieldDefinition::create('entity_reference')
-      ->setLabel(t('Survey Id'))
-      ->setDescription(t('The Name of the associated Survey.'))
+      ->setLabel(t('Partner Assigned Survey Id'))
+      ->setDescription(t('The Name of the partner assigned survey.'))
       ->setSetting('target_type', 'node')
-      ->setSetting('handler_settings', ['target_bundles' => ['survey' => 'survey']])
+      ->setSetting('handler_settings', ['target_bundles' => ['survey' => 'partner_s_assigned_survey']])
       ->setDisplayOptions('view', array(
         'label' => 'above',
         'type' => 'author',
