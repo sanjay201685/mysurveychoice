@@ -28,7 +28,7 @@ switch ($arr['status']) {
     case "comp":
         $query = "UPDATE survey JOIN respondants
                 SET completes = CASE 
-                	WHEN respondants.time_end IS NULL THEN completes + 1 
+                	WHEN respondants.changed IS NULL THEN completes + 1 
                   else 
                     completes
                 END,
@@ -41,7 +41,7 @@ switch ($arr['status']) {
                 WHERE survey.survey_id = :survey_id AND respondants.resp_id = :id ;";
                         $query .= "UPDATE respondants
                 SET outcome= CASE
-                   WHEN time_end IS NULL THEN 'Complete'
+                   WHEN changed IS NULL THEN 'Complete'
                    ELSE 
                      outcome
                 END
@@ -50,7 +50,7 @@ switch ($arr['status']) {
     case "term":
         $query = "UPDATE survey JOIN respondants
             set terminates = case 
-            	WHEN respondants.time_end IS NULL THEN terminates + 1 
+            	WHEN respondants.changed IS NULL THEN terminates + 1 
             	else terminates
             END,
             is_live = CASE
@@ -60,7 +60,7 @@ switch ($arr['status']) {
             WHERE survey.survey_id = :survey_id AND respondants.resp_id = :id ;";
                     $query .= "UPDATE respondants
             SET outcome= CASE
-               WHEN time_end IS NULL THEN 'Terminate'
+               WHEN changed IS NULL THEN 'Terminate'
                ELSE outcome
             END
             WHERE resp_id = :id ;";
@@ -68,7 +68,7 @@ switch ($arr['status']) {
                 case "quot":
                     $query = "UPDATE survey JOIN respondants
             set quota = case 
-            	WHEN respondants.time_end IS NULL THEN quota + 1 
+            	WHEN respondants.changed IS NULL THEN quota + 1 
             	else quota
             END,
             is_live = CASE
@@ -78,7 +78,7 @@ switch ($arr['status']) {
             WHERE survey.survey_id = :survey_id AND respondants.resp_id = :id ;";
                     $query .= "UPDATE respondants
             SET outcome= CASE
-               WHEN time_end IS NULL THEN 'Quota-Full'
+               WHEN changed IS NULL THEN 'Quota-Full'
                ELSE outcome
             END
             WHERE resp_id = :id ;";
@@ -86,7 +86,7 @@ switch ($arr['status']) {
                 case "test":
                     $query .= "UPDATE respondants
             SET outcome= CASE
-               WHEN time_end IS NULL THEN 'Test'
+               WHEN changed IS NULL THEN 'Test'
                ELSE outcome
             END
             WHERE resp_id = :id ;";
