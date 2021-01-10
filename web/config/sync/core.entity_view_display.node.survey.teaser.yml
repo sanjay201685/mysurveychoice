@@ -6,12 +6,16 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.survey.field_ad_id
     - field.field.node.survey.field_company_name
+    - field.field.node.survey.field_completes
     - field.field.node.survey.field_completes_required
     - field.field.node.survey.field_cpi
     - field.field.node.survey.field_identifier_of_survey_link
     - field.field.node.survey.field_ir
+    - field.field.node.survey.field_is_live
     - field.field.node.survey.field_location
+    - field.field.node.survey.field_quota
     - field.field.node.survey.field_survey_link
+    - field.field.node.survey.field_terminates
     - node.type.survey
   module:
     - user
@@ -28,9 +32,13 @@ content:
 hidden:
   field_ad_id: true
   field_company_name: true
+  field_completes: true
   field_completes_required: true
   field_cpi: true
   field_identifier_of_survey_link: true
   field_ir: true
+  field_is_live: true
   field_location: true
+  field_quota: true
   field_survey_link: true
+  field_terminates: true
