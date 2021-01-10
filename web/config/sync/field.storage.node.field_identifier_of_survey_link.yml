@@ -1,16 +1,17 @@
-uuid: 69edfa88-7b03-4f47-8883-b1c46e36623e
+uuid: 7417828a-3dfc-4c37-8e76-3bc4f09da01d
 langcode: en
 status: true
 dependencies:
   module:
     - node
-    - user
-id: node.field_company_partner_person
-field_name: field_company_partner_person
+id: node.field_identifier_of_survey_link
+field_name: field_identifier_of_survey_link
 entity_type: node
-type: entity_reference
+type: string
 settings:
-  target_type: user
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
 module: core
 locked: false
 cardinality: 1

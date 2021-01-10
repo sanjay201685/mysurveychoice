@@ -1,16 +1,17 @@
-uuid: daf466d0-79d0-48dd-b401-c818e874e545
+uuid: eb2912ce-36c5-4085-8e61-03674ee16b18
 langcode: en
 status: true
 dependencies:
   module:
     - node
-    - user
-id: node.field_company_name
-field_name: field_company_name
+id: node.field_identifier_of_completes
+field_name: field_identifier_of_completes
 entity_type: node
-type: entity_reference
+type: string
 settings:
-  target_type: user
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
 module: core
 locked: false
 cardinality: 1

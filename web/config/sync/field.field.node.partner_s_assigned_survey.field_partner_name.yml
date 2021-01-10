@@ -11,15 +11,23 @@ entity_type: node
 bundle: partner_s_assigned_survey
 label: 'Partner Name'
 description: ''
-required: false
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  handler: views
+  handler: 'default:user'
   handler_settings:
-    view:
-      view_name: parnter_name_list
-      display_name: entity_reference_1
-      arguments: {  }
+    include_anonymous: true
+    filter:
+      type: role
+      role:
+        partner: partner
+        administrator: '0'
+        company: '0'
+    target_bundles: null
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
 field_type: entity_reference

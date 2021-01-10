@@ -4,6 +4,16 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.user.compact
+    - field.field.user.user.field_address
+    - field.field.user.user.field_completes_redirect
+    - field.field.user.user.field_contact_no
+    - field.field.user.user.field_identifier_of_completes
+    - field.field.user.user.field_identifier_of_quota_full
+    - field.field.user.user.field_identifier_of_terminates
+    - field.field.user.user.field_is_company_partner
+    - field.field.user.user.field_quota_full_redirect
+    - field.field.user.user.field_tax_details
+    - field.field.user.user.field_terminates_redirect
     - field.field.user.user.user_picture
     - image.style.thumbnail
   module:
@@ -26,4 +36,14 @@ content:
     third_party_settings: {  }
     label: hidden
 hidden:
+  field_address: true
+  field_completes_redirect: true
+  field_contact_no: true
+  field_identifier_of_completes: true
+  field_identifier_of_quota_full: true
+  field_identifier_of_terminates: true
+  field_is_company_partner: true
+  field_quota_full_redirect: true
+  field_tax_details: true
+  field_terminates_redirect: true
   member_for: true

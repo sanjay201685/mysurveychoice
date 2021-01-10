@@ -1,0 +1,20 @@
+uuid: c630e425-8d49-411d-bcd4-0d208cf8e1d5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_quota_full_redirect
+  module:
+    - user
+id: user.user.field_quota_full_redirect
+field_name: field_quota_full_redirect
+entity_type: user
+bundle: user
+label: 'Quota-full Redirect'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

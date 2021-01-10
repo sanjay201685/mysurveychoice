@@ -6,6 +6,9 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.partner_s_assigned_survey.field_company_name
     - field.field.node.partner_s_assigned_survey.field_completes_redirect
+    - field.field.node.partner_s_assigned_survey.field_identifier_of_completes
+    - field.field.node.partner_s_assigned_survey.field_identifier_of_quota_full
+    - field.field.node.partner_s_assigned_survey.field_identifier_of_terminates
     - field.field.node.partner_s_assigned_survey.field_partner_name
     - field.field.node.partner_s_assigned_survey.field_quota_full_redirect
     - field.field.node.partner_s_assigned_survey.field_survey_name
@@ -26,6 +29,9 @@ content:
 hidden:
   field_company_name: true
   field_completes_redirect: true
+  field_identifier_of_completes: true
+  field_identifier_of_quota_full: true
+  field_identifier_of_terminates: true
   field_partner_name: true
   field_quota_full_redirect: true
   field_survey_name: true

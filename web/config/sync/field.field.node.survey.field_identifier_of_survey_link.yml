@@ -1,15 +1,15 @@
-uuid: ff85cc9b-fe03-493d-9fe5-880b8ecdf685
+uuid: 082edd5c-7b8a-416f-9001-50b4d914c19e
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_survey_link
+    - field.storage.node.field_identifier_of_survey_link
     - node.type.survey
-id: node.survey.field_survey_link
-field_name: field_survey_link
+id: node.survey.field_identifier_of_survey_link
+field_name: field_identifier_of_survey_link
 entity_type: node
 bundle: survey
-label: 'Survey Link'
+label: 'Identifier of Survey Link'
 description: ''
 required: true
 translatable: false

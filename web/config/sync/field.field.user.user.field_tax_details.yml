@@ -1,14 +1,15 @@
-uuid: a83b8396-b602-4495-b18a-ec4a663983d0
+uuid: 17b74652-20c7-4121-bcbd-f6fa50533f2c
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_tax_details
-    - node.type.company_partner
-id: node.company_partner.field_tax_details
+    - field.storage.user.field_tax_details
+  module:
+    - user
+id: user.user.field_tax_details
 field_name: field_tax_details
-entity_type: node
-bundle: company_partner
+entity_type: user
+bundle: user
 label: 'Tax Details'
 description: ''
 required: false

@@ -1,0 +1,20 @@
+uuid: 6f9ebea7-9da3-4e5b-9946-22c2ea84a7cf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_identifier_of_quota_full
+  module:
+    - user
+id: user.user.field_identifier_of_quota_full
+field_name: field_identifier_of_quota_full
+entity_type: user
+bundle: user
+label: 'Identifier of Quota-full'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

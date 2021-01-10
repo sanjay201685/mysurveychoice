@@ -1,13 +1,13 @@
-uuid: 5900bfbb-deb9-418a-b6bd-0a85eb70314a
+uuid: 23431d98-9f3d-4d54-9478-79f71d49bdc3
 langcode: en
 status: true
 dependencies:
   module:
-    - node
     - options
-id: node.field_is_company_partner_
-field_name: field_is_company_partner_
-entity_type: node
+    - user
+id: user.field_is_company_partner
+field_name: field_is_company_partner
+entity_type: user
 type: list_string
 settings:
   allowed_values:
@@ -20,7 +20,7 @@ settings:
   allowed_values_function: ''
 module: options
 locked: false
-cardinality: 2
+cardinality: 1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false

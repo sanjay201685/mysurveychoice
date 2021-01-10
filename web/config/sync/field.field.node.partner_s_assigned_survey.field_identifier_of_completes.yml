@@ -1,15 +1,15 @@
-uuid: f544dc92-7737-4d2e-8477-79d2014cdb32
+uuid: ec7c02ec-4e6a-4f2d-aa5c-1bde60f8b386
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_quota_full_redirect
+    - field.storage.node.field_identifier_of_completes
     - node.type.partner_s_assigned_survey
-id: node.partner_s_assigned_survey.field_quota_full_redirect
-field_name: field_quota_full_redirect
+id: node.partner_s_assigned_survey.field_identifier_of_completes
+field_name: field_identifier_of_completes
 entity_type: node
 bundle: partner_s_assigned_survey
-label: 'Quota-full Redirect'
+label: 'Identifier of Completes'
 description: ''
 required: true
 translatable: false

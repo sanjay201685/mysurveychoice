@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.survey.field_company_name
     - field.field.node.survey.field_completes_required
     - field.field.node.survey.field_cpi
+    - field.field.node.survey.field_identifier_of_survey_link
     - field.field.node.survey.field_ir
     - field.field.node.survey.field_location
     - field.field.node.survey.field_survey_link
@@ -24,37 +25,41 @@ content:
     region: content
   field_company_name:
     weight: 4
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: options_select
     region: content
   field_completes_required:
-    weight: 6
+    weight: 7
     settings:
       placeholder: ''
     third_party_settings: {  }
     type: number
     region: content
   field_cpi:
-    weight: 8
-    settings:
-      placeholder: ''
-    third_party_settings: {  }
-    type: number
-    region: content
-  field_ir:
     weight: 9
     settings:
       placeholder: ''
     third_party_settings: {  }
     type: number
     region: content
+  field_identifier_of_survey_link:
+    weight: 6
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_ir:
+    weight: 10
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
   field_location:
-    weight: 7
+    weight: 8
     settings:
       size: 60
       placeholder: ''

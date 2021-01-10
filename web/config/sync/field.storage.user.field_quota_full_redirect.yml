@@ -1,14 +1,16 @@
-uuid: 9f0ca4b8-a12f-445f-a46a-6d03263d4532
+uuid: 13c3df10-36a3-4d5d-b76e-a44c999e677d
 langcode: en
 status: true
 dependencies:
   module:
-    - node
-id: node.field_address
-field_name: field_address
-entity_type: node
-type: string_long
+    - user
+id: user.field_quota_full_redirect
+field_name: field_quota_full_redirect
+entity_type: user
+type: string
 settings:
+  max_length: 255
+  is_ascii: false
   case_sensitive: false
 module: core
 locked: false

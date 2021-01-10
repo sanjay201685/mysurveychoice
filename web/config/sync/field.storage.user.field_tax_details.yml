@@ -1,16 +1,17 @@
-uuid: daf466d0-79d0-48dd-b401-c818e874e545
+uuid: b3e66c48-84af-4660-8f0e-0251d7cdcd01
 langcode: en
 status: true
 dependencies:
   module:
-    - node
     - user
-id: node.field_company_name
-field_name: field_company_name
-entity_type: node
-type: entity_reference
+id: user.field_tax_details
+field_name: field_tax_details
+entity_type: user
+type: string
 settings:
-  target_type: user
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
 module: core
 locked: false
 cardinality: 1

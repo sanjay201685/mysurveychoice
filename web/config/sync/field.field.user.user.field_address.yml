@@ -1,14 +1,15 @@
-uuid: cc5f93ff-16cd-4034-902a-c42e534028bc
+uuid: 82ff911b-f2df-41f0-b6a1-0af6f4b76d5e
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_address
-    - node.type.company_partner
-id: node.company_partner.field_address
+    - field.storage.user.field_address
+  module:
+    - user
+id: user.user.field_address
 field_name: field_address
-entity_type: node
-bundle: company_partner
+entity_type: user
+bundle: user
 label: Address
 description: ''
 required: false

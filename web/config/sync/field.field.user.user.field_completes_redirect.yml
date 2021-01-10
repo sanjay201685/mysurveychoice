@@ -1,0 +1,20 @@
+uuid: 251fd957-2b74-45e5-8ae7-380ee30299b3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_completes_redirect
+  module:
+    - user
+id: user.user.field_completes_redirect
+field_name: field_completes_redirect
+entity_type: user
+bundle: user
+label: 'Completes Redirect'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

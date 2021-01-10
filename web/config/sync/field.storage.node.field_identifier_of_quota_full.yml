@@ -1,16 +1,17 @@
-uuid: daf466d0-79d0-48dd-b401-c818e874e545
+uuid: af73b95d-c639-475b-b9c5-6288348eb6db
 langcode: en
 status: true
 dependencies:
   module:
     - node
-    - user
-id: node.field_company_name
-field_name: field_company_name
+id: node.field_identifier_of_quota_full
+field_name: field_identifier_of_quota_full
 entity_type: node
-type: entity_reference
+type: string
 settings:
-  target_type: user
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
 module: core
 locked: false
 cardinality: 1

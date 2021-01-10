@@ -1,0 +1,21 @@
+uuid: ac95d82a-6718-405b-a429-563f00d9709f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_is_company_partner
+  module:
+    - options
+    - user
+id: user.user.field_is_company_partner
+field_name: field_is_company_partner
+entity_type: user
+bundle: user
+label: 'Is Company/Partner'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

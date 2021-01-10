@@ -5,6 +5,9 @@ dependencies:
   config:
     - field.field.node.partner_s_assigned_survey.field_company_name
     - field.field.node.partner_s_assigned_survey.field_completes_redirect
+    - field.field.node.partner_s_assigned_survey.field_identifier_of_completes
+    - field.field.node.partner_s_assigned_survey.field_identifier_of_quota_full
+    - field.field.node.partner_s_assigned_survey.field_identifier_of_terminates
     - field.field.node.partner_s_assigned_survey.field_partner_name
     - field.field.node.partner_s_assigned_survey.field_quota_full_redirect
     - field.field.node.partner_s_assigned_survey.field_survey_name
@@ -27,6 +30,30 @@ content:
     region: content
   field_completes_redirect:
     weight: 104
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_identifier_of_completes:
+    weight: 109
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_identifier_of_quota_full:
+    weight: 107
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_identifier_of_terminates:
+    weight: 108
     label: above
     settings:
       link_to_entity: false

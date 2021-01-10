@@ -1,16 +1,15 @@
-uuid: daf466d0-79d0-48dd-b401-c818e874e545
+uuid: 3b7a74c9-dbd5-4feb-baa8-c346f59fc611
 langcode: en
 status: true
 dependencies:
   module:
-    - node
     - user
-id: node.field_company_name
-field_name: field_company_name
-entity_type: node
-type: entity_reference
+id: user.field_address
+field_name: field_address
+entity_type: user
+type: string_long
 settings:
-  target_type: user
+  case_sensitive: false
 module: core
 locked: false
 cardinality: 1

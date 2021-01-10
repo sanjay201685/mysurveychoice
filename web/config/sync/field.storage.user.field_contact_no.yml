@@ -1,13 +1,13 @@
-uuid: da243065-b6e6-4e2e-ad80-c0b575f1d6fe
+uuid: 3bf93768-b8c9-4c0f-8bba-bf1e6bd55263
 langcode: en
 status: true
 dependencies:
   module:
-    - node
     - telephone
-id: node.field_contact_no
+    - user
+id: user.field_contact_no
 field_name: field_contact_no
-entity_type: node
+entity_type: user
 type: telephone
 settings: {  }
 module: telephone

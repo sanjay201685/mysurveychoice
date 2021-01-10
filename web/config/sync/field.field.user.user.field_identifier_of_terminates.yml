@@ -1,0 +1,20 @@
+uuid: 462be752-f093-44e5-b811-f221defbfc8c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_identifier_of_terminates
+  module:
+    - user
+id: user.user.field_identifier_of_terminates
+field_name: field_identifier_of_terminates
+entity_type: user
+bundle: user
+label: 'Identifier of Terminates'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

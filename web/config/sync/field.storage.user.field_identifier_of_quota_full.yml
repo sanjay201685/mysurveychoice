@@ -1,12 +1,12 @@
-uuid: dc5348fa-a272-4b48-8206-2257117210fb
+uuid: ebd930ad-b4ac-474f-bb34-c1bb6722c51a
 langcode: en
 status: true
 dependencies:
   module:
-    - node
-id: node.field_tax_details
-field_name: field_tax_details
-entity_type: node
+    - user
+id: user.field_identifier_of_quota_full
+field_name: field_identifier_of_quota_full
+entity_type: user
 type: string
 settings:
   max_length: 255
