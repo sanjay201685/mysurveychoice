@@ -10,13 +10,19 @@ use Drupal\Core\Ajax\InvokeCommand;
 
 function custom_survey_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   switch ($form_id){
+    case 'user_form':
+    case 'user_register_form':
+      $form['field_completes_redirect']['widget']['#suffix'] = '<div class="field_completes_redirect_radio-field"> </div>';
+      $form['field_quota_full_redirect']['widget']['#suffix'] = '<div class="field_quota_full_redirect_radio-field"> </div>';
+      $form['field_terminates_redirect']['widget']['#suffix'] = '<div class="field_terminates_redirect_radio-field"> </div>';
+      $form['#attached']['library'][] = 'custom_survey/custom_survey.node_survey_partner';
+      break;
     case 'node_survey_edit_form':
     case 'node_survey_form':
       $form['field_survey_link']['widget']['#suffix'] = '<div class="field_survey_link_radio-field"> </div>';
       $form['#attached']['library'][] = 'custom_survey/custom_survey.node_survey_partner';
     break;
     case '_node_survey_form':
-
       $form['field_name']['widget']['#suffix'] = '<div class="field_name_radio-field"> </div>';
       $form['#attached']['library'][] = 'respondents/respondents.node_survey_partner';
       break;
