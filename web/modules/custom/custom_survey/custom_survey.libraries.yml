@@ -1,0 +1,4 @@
+custom_survey.node_survey_partner:
+  version: VERSION
+  js:
+    js/node_survey_partner.js: {}

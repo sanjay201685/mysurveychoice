@@ -1,0 +1,4 @@
+name: custom_survey
+type: module
+description: Custom Survey Module
+core_version_requirement: ^8.8 || ^9

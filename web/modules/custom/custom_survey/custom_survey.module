@@ -1,0 +1,78 @@
+<?php
+
+/**
+ * @file
+ * Contains custom_survey.module..
+ */
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Ajax\AjaxResponse;
+use Drupal\Core\Ajax\InvokeCommand;
+
+function custom_survey_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  switch ($form_id){
+    case 'node_survey_edit_form':
+    case 'node_survey_form':
+      $form['field_survey_link']['widget']['#suffix'] = '<div class="field_survey_link_radio-field"> </div>';
+      $form['#attached']['library'][] = 'custom_survey/custom_survey.node_survey_partner';
+    break;
+    case '_node_survey_form':
+
+      $form['field_name']['widget']['#suffix'] = '<div class="field_name_radio-field"> </div>';
+      $form['#attached']['library'][] = 'respondents/respondents.node_survey_partner';
+      break;
+    case 'node_partner_s_assigned_survey_edit_form':
+    case 'node_partner_s_assigned_survey_form':
+      $form['field_company_name']['widget']['#ajax'] = [
+        'callback' => 'ajaxDependentField',
+        'event' => 'change',
+        'wrapper' => 'ajax-field_company_name-container'
+      ];
+      $form['field_survey_name']['#prefix'] = '<div id="ajax-field_company_name-container">';
+      $form['field_survey_name']['#suffix'] = '</div>';
+      if($form_state->getValue('field_company_name')) {
+        $company_id = $form_state->getValue('field_company_name')[0]['target_id'];
+        $form['field_survey_name']['widget']['#options'] = get_survey_option($company_id);
+      }
+      elseif(!empty($form['field_company_name']['widget']['#default_value'][0])) {
+        $company_id = $form['field_survey_name']['widget']['#default_value'][0];
+        $form['field_survey_name']['widget']['#options'] = get_survey_option($company_id);
+      }
+
+      $form['field_partner_name']['widget']['#ajax'] = [
+        'callback' => 'ajaxAutoSelectedField',
+        'event' => 'change',
+      ];
+      $form['#attached']['library'][] = 'custom_survey/custom_survey.node_survey_partner';
+      break;
+  }
+}
+
+function ajaxDependentField(array &$form, FormStateInterface $form_state) {
+  return $form['field_survey_name'];
+}
+
+function get_survey_option($company_id){
+  $database = \Drupal::database();
+  return ['_none' => '- Select a value -'] + $database->query("SELECT n.nid, n.title FROM {node_field_data} n
+    INNER JOIN {node__field_company_name} cn ON cn.entity_id = n.nid
+    WHERE cn.field_company_name_target_id = :company_id
+    AND n.status = 1", [":company_id" => $company_id])->fetchAllKeyed(0, 1);
+}
+
+function ajaxAutoSelectedField(array &$form, FormStateInterface $form_state){
+  $ajax_response = new AjaxResponse();
+  $partner_id = 0;
+  $partner_name = $form_state->getValue('field_partner_name');
+  if(!empty($partner_name)) {
+    $database = \Drupal::database();
+    $partner_id = $partner_name[0]['target_id'];
+    $result = $database->query("SELECT cr.field_completes_redirect_value, fr.field_quota_full_redirect_value, tr.field_terminates_redirect_value FROM {users_field_data} u
+    INNER JOIN {user__field_completes_redirect} cr ON cr.entity_id = u.uid
+    INNER JOIN {user__field_quota_full_redirect} fr ON fr.entity_id = u.uid
+    INNER JOIN {user__field_terminates_redirect} tr ON tr.entity_id = u.uid
+    WHERE u.uid = :partner_id AND u.status = 1", [":partner_id" => $partner_id])->fetchObject();
+    print_r($result); exit('asdfa');
+  }
+  $ajax_response->addCommand(new InvokeCommand(NULL, 'ajaxAutoSelectedFieldMethod', [['Val1', 'Val2']]));
+  return $ajax_response;
+}

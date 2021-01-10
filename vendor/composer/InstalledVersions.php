@@ -29,7 +29,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => 'f78d8c853630ef5431e264a12eccbdf6634a879f',
+    'reference' => 'fc63c3bf0cd0294c03b1b4e4dd0cc7742c548d6b',
     'name' => 'drupal-composer/drupal-project',
   ),
   'versions' => 
@@ -275,6 +275,51 @@ private static $installed = array (
       ),
       'reference' => 'ce77a7ba1770462cd705a91a151b6c3746f9c6ad',
     ),
+    'doctrine/cache' => 
+    array (
+      'pretty_version' => '1.10.2',
+      'version' => '1.10.2.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '13e3381b25847283a91948d04640543941309727',
+    ),
+    'doctrine/collections' => 
+    array (
+      'pretty_version' => '1.6.7',
+      'version' => '1.6.7.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '55f8b799269a1a472457bd1a41b4f379d4cfba4a',
+    ),
+    'doctrine/common' => 
+    array (
+      'pretty_version' => '2.13.3',
+      'version' => '2.13.3.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'f3812c026e557892c34ef37f6ab808a6b567da7f',
+    ),
+    'doctrine/event-manager' => 
+    array (
+      'pretty_version' => '1.1.1',
+      'version' => '1.1.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '41370af6a30faa9dc0368c4a6814d596e81aba7f',
+    ),
+    'doctrine/inflector' => 
+    array (
+      'pretty_version' => '1.4.3',
+      'version' => '1.4.3.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '4650c8b30c753a76bf44fb2ed00117d6f367490c',
+    ),
     'doctrine/instantiator' => 
     array (
       'pretty_version' => '1.4.0',
@@ -293,6 +338,15 @@ private static $installed = array (
       ),
       'reference' => 'e864bbf5904cb8f5bb334f99209b48018522f042',
     ),
+    'doctrine/persistence' => 
+    array (
+      'pretty_version' => '1.3.8',
+      'version' => '1.3.8.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '7a6eac9fb6f61bba91328f15aa7547f4806ca288',
+    ),
     'doctrine/reflection' => 
     array (
       'pretty_version' => '1.2.2',
@@ -309,7 +363,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => 'f78d8c853630ef5431e264a12eccbdf6634a879f',
+      'reference' => 'fc63c3bf0cd0294c03b1b4e4dd0cc7742c548d6b',
     ),
     'drupal/action' => 
     array (
@@ -714,6 +768,15 @@ private static $installed = array (
       array (
         0 => '9.1.0',
       ),
+    ),
+    'drupal/devel' => 
+    array (
+      'pretty_version' => '4.1.1',
+      'version' => '4.1.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '4.1.1',
     ),
     'drupal/dynamic_page_cache' => 
     array (
