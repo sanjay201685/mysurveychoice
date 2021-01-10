@@ -42,6 +42,11 @@ function custom_survey_form_alter(&$form, FormStateInterface $form_state, $form_
         'callback' => 'ajaxAutoSelectedField',
         'event' => 'change',
       ];
+
+      $form['field_completes_redirect']['widget']['#suffix'] = '<div class="field_completes_redirect_radio-field"> </div>';
+      $form['field_quota_full_redirect']['widget']['#suffix'] = '<div class="field_quota_full_redirect_radio-field"> </div>';
+      $form['field_terminates_redirect']['widget']['#suffix'] = '<div class="field_terminates_redirect_radio-field"> </div>';
+
       $form['#attached']['library'][] = 'custom_survey/custom_survey.node_survey_partner';
       break;
   }
@@ -63,16 +68,23 @@ function ajaxAutoSelectedField(array &$form, FormStateInterface $form_state){
   $ajax_response = new AjaxResponse();
   $partner_id = 0;
   $partner_name = $form_state->getValue('field_partner_name');
+  $redirect['field_completes_redirect'] = '';
+  $redirect['field_identifier_of_completes'] = '';
+  $redirect['field_quota_full_redirect'] = '';
+  $redirect['field_identifier_of_quota_full'] = '';
+  $redirect['field_terminates_redirect'] = '';
+  $redirect['field_identifier_of_terminates'] = '';
   if(!empty($partner_name)) {
-    $database = \Drupal::database();
     $partner_id = $partner_name[0]['target_id'];
-    $result = $database->query("SELECT cr.field_completes_redirect_value, fr.field_quota_full_redirect_value, tr.field_terminates_redirect_value FROM {users_field_data} u
-    INNER JOIN {user__field_completes_redirect} cr ON cr.entity_id = u.uid
-    INNER JOIN {user__field_quota_full_redirect} fr ON fr.entity_id = u.uid
-    INNER JOIN {user__field_terminates_redirect} tr ON tr.entity_id = u.uid
-    WHERE u.uid = :partner_id AND u.status = 1", [":partner_id" => $partner_id])->fetchObject();
-    print_r($result); exit('asdfa');
+    $user_storage = \Drupal::entityTypeManager()->getStorage('user');
+    $account = $user_storage->load($partner_id);
+    $redirect['field_completes_redirect'] = $account->get('field_completes_redirect')->getString();
+    $redirect['field_identifier_of_completes'] = $account->get('field_identifier_of_completes')->getString();
+    $redirect['field_quota_full_redirect'] = $account->get('field_quota_full_redirect')->getString();
+    $redirect['field_identifier_of_quota_full'] = $account->get('field_identifier_of_quota_full')->getString();
+    $redirect['field_terminates_redirect'] = $account->get('field_terminates_redirect')->getString();
+    $redirect['field_identifier_of_terminates'] = $account->get('field_identifier_of_terminates')->getString();
   }
-  $ajax_response->addCommand(new InvokeCommand(NULL, 'ajaxAutoSelectedFieldMethod', [['Val1', 'Val2']]));
+  $ajax_response->addCommand(new InvokeCommand(NULL, 'ajaxAutoSelectedFieldMethod', [$redirect]));
   return $ajax_response;
 }
