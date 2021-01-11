@@ -5,16 +5,12 @@ dependencies:
   config:
     - field.field.node.survey.field_ad_id
     - field.field.node.survey.field_company_name
-    - field.field.node.survey.field_completes
     - field.field.node.survey.field_completes_required
     - field.field.node.survey.field_cpi
     - field.field.node.survey.field_identifier_of_survey_link
     - field.field.node.survey.field_ir
-    - field.field.node.survey.field_is_live
     - field.field.node.survey.field_location
-    - field.field.node.survey.field_quota
     - field.field.node.survey.field_survey_link
-    - field.field.node.survey.field_terminates
     - node.type.survey
 id: node.survey.default
 targetEntityType: node
@@ -32,13 +28,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: options_select
-    region: content
-  field_completes:
-    weight: 26
-    settings:
-      placeholder: ''
-    third_party_settings: {  }
-    type: number
     region: content
   field_completes_required:
     weight: 7
@@ -69,12 +58,6 @@ content:
     third_party_settings: {  }
     type: number
     region: content
-  field_is_live:
-    weight: 29
-    settings: {  }
-    third_party_settings: {  }
-    type: options_select
-    region: content
   field_location:
     weight: 8
     settings:
@@ -83,13 +66,6 @@ content:
     third_party_settings: {  }
     type: string_textfield
     region: content
-  field_quota:
-    weight: 28
-    settings:
-      placeholder: ''
-    third_party_settings: {  }
-    type: number
-    region: content
   field_survey_link:
     weight: 5
     settings:
@@ -97,13 +73,6 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
-    region: content
-  field_terminates:
-    weight: 27
-    settings:
-      placeholder: ''
-    third_party_settings: {  }
-    type: number
     region: content
   status:
     type: boolean_checkbox

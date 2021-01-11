@@ -5,16 +5,12 @@ dependencies:
   config:
     - field.field.node.survey.field_ad_id
     - field.field.node.survey.field_company_name
-    - field.field.node.survey.field_completes
     - field.field.node.survey.field_completes_required
     - field.field.node.survey.field_cpi
     - field.field.node.survey.field_identifier_of_survey_link
     - field.field.node.survey.field_ir
-    - field.field.node.survey.field_is_live
     - field.field.node.survey.field_location
-    - field.field.node.survey.field_quota
     - field.field.node.survey.field_survey_link
-    - field.field.node.survey.field_terminates
     - node.type.survey
   module:
     - options
@@ -38,15 +34,6 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
-    region: content
-  field_completes:
-    weight: 109
-    label: above
-    settings:
-      thousand_separator: ''
-      prefix_suffix: true
-    third_party_settings: {  }
-    type: number_integer
     region: content
   field_completes_required:
     weight: 104
@@ -83,13 +70,6 @@ content:
     third_party_settings: {  }
     type: number_integer
     region: content
-  field_is_live:
-    weight: 112
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: list_default
-    region: content
   field_location:
     weight: 105
     label: above
@@ -98,15 +78,6 @@ content:
     third_party_settings: {  }
     type: string
     region: content
-  field_quota:
-    weight: 111
-    label: above
-    settings:
-      thousand_separator: ''
-      prefix_suffix: true
-    third_party_settings: {  }
-    type: number_integer
-    region: content
   field_survey_link:
     weight: 103
     label: above
@@ -114,15 +85,6 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
-    region: content
-  field_terminates:
-    weight: 110
-    label: above
-    settings:
-      thousand_separator: ''
-      prefix_suffix: true
-    third_party_settings: {  }
-    type: number_integer
     region: content
   links:
     weight: 100
