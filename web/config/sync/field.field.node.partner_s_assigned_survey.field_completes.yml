@@ -1,0 +1,23 @@
+uuid: 2e02e92e-1935-494a-a983-e7c4387151cb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_completes
+    - node.type.partner_s_assigned_survey
+id: node.partner_s_assigned_survey.field_completes
+field_name: field_completes
+entity_type: node
+bundle: partner_s_assigned_survey
+label: Completes
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

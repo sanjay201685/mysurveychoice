@@ -4,13 +4,16 @@ status: true
 dependencies:
   config:
     - field.field.node.partner_s_assigned_survey.field_company_name
+    - field.field.node.partner_s_assigned_survey.field_completes
     - field.field.node.partner_s_assigned_survey.field_completes_redirect
     - field.field.node.partner_s_assigned_survey.field_identifier_of_completes
     - field.field.node.partner_s_assigned_survey.field_identifier_of_quota_full
     - field.field.node.partner_s_assigned_survey.field_identifier_of_terminates
     - field.field.node.partner_s_assigned_survey.field_partner_name
+    - field.field.node.partner_s_assigned_survey.field_quota
     - field.field.node.partner_s_assigned_survey.field_quota_full_redirect
     - field.field.node.partner_s_assigned_survey.field_survey_name
+    - field.field.node.partner_s_assigned_survey.field_terminates
     - field.field.node.partner_s_assigned_survey.field_terminates_redirect
     - node.type.partner_s_assigned_survey
   module:
@@ -27,6 +30,15 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+    region: content
+  field_completes:
+    weight: 110
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
     region: content
   field_completes_redirect:
     weight: 104
@@ -68,6 +80,15 @@ content:
     third_party_settings: {  }
     type: entity_reference_label
     region: content
+  field_quota:
+    weight: 111
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
   field_quota_full_redirect:
     weight: 106
     label: above
@@ -83,6 +104,15 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+    region: content
+  field_terminates:
+    weight: 112
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
     region: content
   field_terminates_redirect:
     weight: 105

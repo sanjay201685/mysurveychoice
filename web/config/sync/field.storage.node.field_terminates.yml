@@ -1,0 +1,20 @@
+uuid: 966d9dba-617f-4fcc-b457-85e340d24a9c
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_terminates
+field_name: field_terminates
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

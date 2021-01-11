@@ -1,0 +1,23 @@
+uuid: 9db1aa30-7bc2-4084-aead-2841c3c6dc2a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_terminates
+    - node.type.partner_s_assigned_survey
+id: node.partner_s_assigned_survey.field_terminates
+field_name: field_terminates
+entity_type: node
+bundle: partner_s_assigned_survey
+label: Terminates
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

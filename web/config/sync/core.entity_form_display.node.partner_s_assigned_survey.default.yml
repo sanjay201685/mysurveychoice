@@ -4,13 +4,16 @@ status: true
 dependencies:
   config:
     - field.field.node.partner_s_assigned_survey.field_company_name
+    - field.field.node.partner_s_assigned_survey.field_completes
     - field.field.node.partner_s_assigned_survey.field_completes_redirect
     - field.field.node.partner_s_assigned_survey.field_identifier_of_completes
     - field.field.node.partner_s_assigned_survey.field_identifier_of_quota_full
     - field.field.node.partner_s_assigned_survey.field_identifier_of_terminates
     - field.field.node.partner_s_assigned_survey.field_partner_name
+    - field.field.node.partner_s_assigned_survey.field_quota
     - field.field.node.partner_s_assigned_survey.field_quota_full_redirect
     - field.field.node.partner_s_assigned_survey.field_survey_name
+    - field.field.node.partner_s_assigned_survey.field_terminates
     - field.field.node.partner_s_assigned_survey.field_terminates_redirect
     - node.type.partner_s_assigned_survey
 id: node.partner_s_assigned_survey.default
@@ -29,6 +32,13 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: options_select
+    region: content
+  field_completes:
+    weight: 26
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
     region: content
   field_completes_redirect:
     weight: 4
@@ -68,6 +78,13 @@ content:
     third_party_settings: {  }
     type: options_select
     region: content
+  field_quota:
+    weight: 27
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
   field_quota_full_redirect:
     weight: 6
     settings:
@@ -81,6 +98,13 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: options_select
+    region: content
+  field_terminates:
+    weight: 28
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
     region: content
   field_terminates_redirect:
     weight: 8
