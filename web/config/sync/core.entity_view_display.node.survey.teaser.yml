@@ -28,9 +28,12 @@ content:
 hidden:
   field_ad_id: true
   field_company_name: true
+  field_completes: true
   field_completes_required: true
   field_cpi: true
   field_identifier_of_survey_link: true
   field_ir: true
   field_location: true
+  field_quota: true
   field_survey_link: true
+  field_terminates: true

@@ -1,0 +1,12 @@
+lark_color: '#0072c5'
+_core:
+  default_config_hash: AXHz5nqlOUhmxmk-qV58W6QI7rRalLv-DdJqtg46ABQ
+features:
+  node_user_picture: 1
+  comment_user_picture: 1
+  comment_user_verification: 1
+  favicon: 0
+logo:
+  use_default: 1
+favicon:
+  use_default: 1

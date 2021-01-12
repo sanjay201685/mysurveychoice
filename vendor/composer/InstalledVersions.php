@@ -29,7 +29,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => 'fc63c3bf0cd0294c03b1b4e4dd0cc7742c548d6b',
+    'reference' => 'e9c31aed114074a145e7dc341af494f38f860370',
     'name' => 'drupal-composer/drupal-project',
   ),
   'versions' => 
@@ -363,7 +363,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => 'fc63c3bf0cd0294c03b1b4e4dd0cc7742c548d6b',
+      'reference' => 'e9c31aed114074a145e7dc341af494f38f860370',
     ),
     'drupal/action' => 
     array (
@@ -896,6 +896,15 @@ private static $installed = array (
       array (
         0 => '9.1.0',
       ),
+    ),
+    'drupal/lark' => 
+    array (
+      'pretty_version' => '1.0.1',
+      'version' => '1.0.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '1.0.1',
     ),
     'drupal/layout_builder' => 
     array (

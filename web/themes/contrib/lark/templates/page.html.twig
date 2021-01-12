@@ -1,0 +1,27 @@
+<div class="l-page">
+  <div class="l-banner">
+    <div class="site-banner">
+      {{ page.banner }}
+    </div>
+  </div>
+  <div class="grid--full">
+    <div class="col">
+      <div class="l-sidebar__container">
+        <div>
+          <a class="button button--sidebar" href="/node/add"><span class="fas fa-plus"></span> Add Content</a>
+        </div>
+        <hr class="hr margin-lg--left" />
+        <div class="r-sidebar">
+          <div class="shortcuts">
+            {{ shortcuts }}
+          </div>
+          {{ page.sidebar }}
+        </div>
+      </div>
+    </div>
+    <div class="col l-content">
+      {{ page.header }}
+      {{ page.content }}
+    </div>
+  </div>
+</div>
