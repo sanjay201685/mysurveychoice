@@ -1,0 +1,23 @@
+uuid: 75b223a2-59dc-4264-958e-9aa0eb27604e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_terminates
+    - node.type.survey
+id: node.survey.field_terminates
+field_name: field_terminates
+entity_type: node
+bundle: survey
+label: Terminates
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

@@ -101,6 +101,9 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
+  field_completes: true
+  field_quota: true
+  field_terminates: true
   path: true
   promote: true
   sticky: true

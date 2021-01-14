@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0e386b7f7a9001de6307489c76a93717",
+    "content-hash": "c9381b7514a8523d6dd0b1c090d53219",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2412,6 +2412,54 @@
                 "source": "https://gitlab.com/drupalspoons/devel",
                 "issues": "https://gitlab.com/drupalspoons/devel/-/issues",
                 "slack": "https://drupal.slack.com/archives/C012WAW1MH6"
+            }
+        },
+        {
+            "name": "drupal/lark",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/lark.git",
+                "reference": "1.0.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/lark-1.0.1.zip",
+                "reference": "1.0.1",
+                "shasum": "deffc5e8e7b4532ef59e1dbd5d4857c44c6a6c2c"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9"
+            },
+            "type": "drupal-theme",
+            "extra": {
+                "drupal": {
+                    "version": "1.0.1",
+                    "datestamp": "1603382241",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "carwin",
+                    "homepage": "https://www.drupal.org/user/487058"
+                },
+                {
+                    "name": "jenny.cha",
+                    "homepage": "https://www.drupal.org/user/2720473"
+                }
+            ],
+            "description": "An Administrative theme from Mobomo.",
+            "homepage": "https://www.drupal.org/project/lark",
+            "support": {
+                "source": "https://git.drupalcode.org/project/lark"
             }
         },
         {

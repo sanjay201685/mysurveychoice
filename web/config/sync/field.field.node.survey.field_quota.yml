@@ -1,0 +1,23 @@
+uuid: 29487f29-3b6c-4589-b2e0-eaa92321e122
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_quota
+    - node.type.survey
+id: node.survey.field_quota
+field_name: field_quota
+entity_type: node
+bundle: survey
+label: Quota
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer
