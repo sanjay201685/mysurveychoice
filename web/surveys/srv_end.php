@@ -53,12 +53,12 @@ switch ($arr['status']) {
     WHERE com.entity_id = ? AND res.resp_id = ? ;";
 
     $query .= "UPDATE respondents_term AS res
-      SET res.changed = ?
       SET res.outcome = CASE
         WHEN res.changed IS NULL THEN 'Complete'
         ELSE 
           res.outcome
-        END
+        END,
+        res.changed = '". strtotime('now') ."'
       WHERE res.resp_id = ? ;";
   break;
 
@@ -72,7 +72,7 @@ switch ($arr['status']) {
       WHERE ter.entity_id = ? AND res.resp_id = ? ;";
 
     $query .= "UPDATE respondents_term AS res
-      SET res.outcome= CASE 
+      SET res.outcome = CASE 
         WHEN res.changed IS NULL THEN 'Terminate'
         ELSE 
           res.outcome
@@ -139,6 +139,7 @@ $result->execute([$arr['survey_id'], $arr['id'], $arr['id']]);
 
       $redirect = str_replace("xxxx", $arr['partner_id'], $redirect);
       Redirect($redirect, false);
+      die;
     }
   }
 

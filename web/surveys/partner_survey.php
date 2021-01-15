@@ -30,7 +30,7 @@ $result = $conn->prepare($query);
 $result->execute([$survey_map_id]);
 $result1 = $result->fetchAll(PDO::FETCH_ASSOC);
 
-if ($result1[0]['cv'] > $result1[0]['rs']) {
+if ($result1[0]['cv'] >= $result1[0]['rs']) {
   $survey_link = getRedurectUrl($conn, $survey_map_id);
   $survey_link = str_replace("xxxx", $id, $survey_link);
   Redirect($survey_link, false);
@@ -82,8 +82,10 @@ if ($survey_map_id) {
       echo 'Error: ' . $e->getMessage() . '<br />';
     }
 
+    session_destroy();
     $survey_link = str_replace("xxxx", $id, $survey_link);
     Redirect($survey_link, false);
+    die;
 }
 
 
