@@ -246,3 +246,20 @@ function lark_preprocess_block(&$variables) {
       break;
   }
 }
+
+/**
+ * Implements template_preprocess_region().
+ */
+function lark_preprocess_region(&$variables) {
+  if (isset($variables['region']) && $variables['region'] == 'banner') {
+    $default_image = '/themes/contrib/lark/default_picture.png';
+    if($variables['user']->isAuthenticated()) {
+      $user = \Drupal\user\Entity\User::load($variables['user']->id());
+      if (!$user->user_picture->isEmpty()) {
+        $picture = $user->user_picture->entity->getFileUri();
+        $default_image = \Drupal\image\Entity\ImageStyle::load('thumbnail')->buildUrl($picture);
+      }
+    }
+    $variables['default_image'] = $default_image;
+  }
+}

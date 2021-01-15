@@ -29,7 +29,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => 'e9c31aed114074a145e7dc341af494f38f860370',
+    'reference' => 'e7927f4306fd7b89287cfb267025f30c3e6b0f04',
     'name' => 'drupal-composer/drupal-project',
   ),
   'versions' => 
@@ -363,7 +363,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => 'e9c31aed114074a145e7dc341af494f38f860370',
+      'reference' => 'e7927f4306fd7b89287cfb267025f30c3e6b0f04',
     ),
     'drupal/action' => 
     array (
@@ -777,6 +777,15 @@ private static $installed = array (
       array (
       ),
       'reference' => '4.1.1',
+    ),
+    'drupal/devel_kint_extras' => 
+    array (
+      'pretty_version' => '1.0.0',
+      'version' => '1.0.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '1.0.0',
     ),
     'drupal/dynamic_page_cache' => 
     array (
@@ -1337,6 +1346,15 @@ private static $installed = array (
       array (
       ),
       'reference' => '2ba9c8c862ecd5510ed16c6340aa9f6eadb4f31b',
+    ),
+    'kint-php/kint' => 
+    array (
+      'pretty_version' => '3.3',
+      'version' => '3.3.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '335ac1bcaf04d87df70d8aa51e8887ba2c6d203b',
     ),
     'laminas/laminas-diactoros' => 
     array (
