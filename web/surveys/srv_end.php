@@ -46,7 +46,7 @@ switch ($arr['status']) {
     $query = "UPDATE respondents_term AS res 
       JOIN node__field_completes AS com ON res.survey_id = com.entity_id
       SET com.field_completes_value = CASE 
-        WHEN res.changed IS NULL THEN com.field_completes_value + 1 
+        WHEN res.changed = 0 THEN com.field_completes_value + 1 
         ELSE 
           com.field_completes_value
         END
@@ -54,7 +54,7 @@ switch ($arr['status']) {
 
     $query .= "UPDATE respondents_term AS res
       SET res.outcome = CASE
-        WHEN res.changed IS NULL THEN 'Complete'
+        WHEN res.changed = 0 THEN 'Complete'
         ELSE 
           res.outcome
         END,
@@ -66,43 +66,44 @@ switch ($arr['status']) {
     $query = "UPDATE respondents_term AS res      
     JOIN node__field_terminates AS ter ON res.survey_id = ter.entity_id
       set ter.field_terminates_value = case 
-        WHEN res.changed IS NULL THEN ter.field_terminates_value + 1 
+        WHEN res.changed = 0 THEN ter.field_terminates_value + 1 
           else ter.field_terminates_value
         END
       WHERE ter.entity_id = ? AND res.resp_id = ? ;";
 
     $query .= "UPDATE respondents_term AS res
       SET res.outcome = CASE 
-        WHEN res.changed IS NULL THEN 'Terminate'
+        WHEN res.changed = 0 THEN 'Terminate'
         ELSE 
           res.outcome
         END
       WHERE res.resp_id = ? ;";
   break;
+  
+  // I don't think so need below pice of code because we already handle this condition.
+  // case "quot":
+  //   $query = "UPDATE respondents_term AS res
+  //     JOIN node__field_quota AS quo ON res.survey_id = quo.entity_id
+  //     SET quo.field_quota_value = CASE 
+  //       WHEN res.changed = 0 THEN quo.field_quota_value + 1 
+  //       ELSE 
+  //         quo.field_quota_value
+  //       END
+  //     WHERE quo.entity_id = ? AND res.resp_id = ? ;";
 
-  case "quot":
-    $query = "UPDATE respondents_term AS res
-      JOIN node__field_quota AS quo ON res.survey_id = quo.entity_id
-      SET quo.field_quota_value = CASE 
-        WHEN res.changed IS NULL THEN quo.field_quota_value + 1 
-        ELSE 
-          quo.field_quota_value
-        END
-      WHERE quo.entity_id = ? AND res.resp_id = ? ;";
-
-    $query .= "UPDATE respondents_term AS res
-      SET res.outcome = CASE
-        WHEN res.changed IS NULL THEN 'Quota-Full'
-        ELSE 
-          res.outcome
-        END
-      WHERE res.resp_id = :id ;";
-  break;
+  //   $query .= "UPDATE respondents_term AS res
+  //     SET res.outcome = CASE
+  //       WHEN res.changed = 0 THEN 'Quota-Full'
+  //       ELSE 
+  //         res.outcome
+  //       END
+  //     WHERE res.resp_id = :id ;";
+  // break;
 
   case "test":
     $query .= "UPDATE respondents_term as res
       SET res.outcome = CASE
-      WHEN res.changed IS NULL THEN 'Test'
+      WHEN res.changed = 0 THEN 'Test'
       ELSE 
         res.outcome
       END
