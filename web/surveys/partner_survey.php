@@ -1,5 +1,6 @@
 <?php
 require_once 'connection.php';
+
 session_start();
 $partner_id =  (string) filter_input(INPUT_GET, 'id');
 $survey_map_id = (string) filter_input(INPUT_GET, 'srv');
@@ -30,7 +31,7 @@ $result = $conn->prepare($query);
 $result->execute([$survey_map_id]);
 $result1 = $result->fetchAll(PDO::FETCH_ASSOC);
 
-if ($result1[0]['cv'] >= $result1[0]['rs']) {
+if (!empty($result1[0]['cv']) && !empty($result1[0]['rs']) && ($result1[0]['cv'] >= $result1[0]['rs'])) {
   $survey_link = getRedurectUrl($conn, $survey_map_id);
   $survey_link = str_replace("xxxx", $id, $survey_link);
   Redirect($survey_link, false);
@@ -76,7 +77,7 @@ if ($survey_map_id) {
         VALUES (NULL, :resp_id, :partner_id, :session_id, :survey_map_id, 'Partner',  'DROPOFF', :location, :created, :changed) ";
         $result = $conn->prepare($query);
         $result->execute($ins_data);
-
+        //print $conn->lastInsertId(); die;
         $survey_link = getSurveyUrl($conn, $survey_map_id);
     } catch (PDOException $e) {
       echo 'Error: ' . $e->getMessage() . '<br />';
