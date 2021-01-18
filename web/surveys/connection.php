@@ -3,9 +3,9 @@
 require_once '../sites/default/settings.php';
 
 try {
-  $hostname = $databases['default']['host'];
-  $username = $databases['default']['username']; 
-  $password = $databases['default']['password'];
+  $hostname = $databases['default']['default']['host'];
+  $username = $databases['default']['default']['username']; 
+  $password = $databases['default']['default']['password'];
   $dbname = $databases['default']['default']['database'];
 
   $conn = new PDO("mysql:host=$hostname; dbname=$dbname", $username, $password);
