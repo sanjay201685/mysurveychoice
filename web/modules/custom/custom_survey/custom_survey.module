@@ -42,7 +42,7 @@ function custom_survey_form_alter(&$form, FormStateInterface $form_state, $form_
       }
       elseif(!empty($form['field_company_name']['widget']['#default_value'][0])) {
         $company_id = $form['field_survey_name']['widget']['#default_value'][0];
-        // $form['field_survey_name']['widget']['#options'] = get_survey_option($company_id);
+        $form['field_survey_name']['widget']['#options'] = get_survey_option($company_id);
       }
 
       $form['field_partner_name']['widget']['#ajax'] = [
@@ -67,8 +67,8 @@ function get_survey_option($company_id){
   $database = \Drupal::database();
   return ['_none' => '- Select a value -'] + $database->query("SELECT n.nid, n.title FROM {node_field_data} n
     INNER JOIN {node__field_company_name} cn ON cn.entity_id = n.nid
-    WHERE cn.field_company_name_target_id = :company_id
-    AND n.status = 1", [":company_id" => $company_id])->fetchAllKeyed(0, 1);
+    WHERE cn.field_company_name_target_id = :company_id AND n.type = :type
+    AND n.status = 1", [":company_id" => $company_id, ':type' => 'survey'])->fetchAllKeyed(0, 1);
 }
 
 function ajaxAutoSelectedField(array &$form, FormStateInterface $form_state){
@@ -108,10 +108,10 @@ function partner_s_assigned_survey(array &$form, FormStateInterface $form_state)
 
   //Get current noid id in case of edit.
   $cur_nid = $form_state->getformObject()->getEntity()->id();
-  
+
   //Get surbey id.
   $suvery_id = $form_state->getValue('field_survey_name')[0]['target_id'];
- 
+
   // Get total no of survey required.
   $result = $database->select('node__field_completes_required', 'rv')
                     ->condition('rv.entity_id', $suvery_id, '=')
@@ -138,5 +138,5 @@ function partner_s_assigned_survey(array &$form, FormStateInterface $form_state)
     $msg = 'Maximum survey can be assign ' . $max_srv_ass;
     return $form_state->setErrorByName('field_total_survey_required', t($msg));
   }
-  
+
 }
