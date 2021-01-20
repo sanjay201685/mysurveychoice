@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => 'e7927f4306fd7b89287cfb267025f30c3e6b0f04',
+    'reference' => 'cda0f9a584484358869438edf37ac711ba410a74',
     'name' => 'drupal-composer/drupal-project',
   ),
   'versions' => 
@@ -340,7 +340,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => 'e7927f4306fd7b89287cfb267025f30c3e6b0f04',
+      'reference' => 'cda0f9a584484358869438edf37ac711ba410a74',
     ),
     'drupal/action' => 
     array (
@@ -1039,6 +1039,15 @@
         0 => '9.1.0',
       ),
     ),
+    'drupal/redirect_after_login' => 
+    array (
+      'pretty_version' => '2.6.0',
+      'version' => '2.6.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '8.x-2.6',
+    ),
     'drupal/responsive_image' => 
     array (
       'replaced' => 
@@ -1164,6 +1173,15 @@
       array (
         0 => '9.1.0',
       ),
+    ),
+    'drupal/trim' => 
+    array (
+      'pretty_version' => '1.0.0',
+      'version' => '1.0.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '8.x-1.0',
     ),
     'drupal/update' => 
     array (

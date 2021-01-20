@@ -1,0 +1,51 @@
+<?php
+
+/**
+ * @file
+ * Trim module.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_form_alter().
+ */
+function trim_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  // Ensure that there is an array here.
+  if (!isset($form['#validate'])) {
+    $form['#validate'] = [];
+  }
+  // And if someone has set it as a string, fix that issue. You'd be surprised.
+  elseif (!is_array($form['#validate'])) {
+    $form['#validate'][] = $form['#validate'];
+  }
+  // Now add a new function to the list, but ensure that it is called first.
+  array_unshift($form['#validate'], 'trim_form_values');
+}
+
+/**
+ * Validation callback function. Trim the values of the form.
+ */
+function trim_form_values(&$form, FormStateInterface $form_state) {
+  foreach ($form_state->getValues() as $key => $value) {
+    trim_value($value);
+    $form_state->setValue($key, $value);
+  }
+}
+
+/**
+ * Trim string values and recursively trim array values.
+ *
+ * @param mixed &$value
+ *   A string, integer, array, or object of the value.
+ */
+function trim_value(&$value) {
+  if (is_array($value)) {
+    foreach ($value as &$value2) {
+      trim_value($value2);
+    }
+  }
+  elseif (is_string($value)) {
+    $value = trim($value);
+  }
+}
