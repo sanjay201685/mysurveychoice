@@ -21,9 +21,9 @@ function getToken($length){
 }
 
 // Dynamic respondent id
-$id = "CR-".$survey_map_id."_".getToken(20);  
+$id = "CR-".$survey_map_id."_".getToken(20);
 /* Validate required survey for a partner completed - Start here */
-$query = "SELECT com.field_completes_value AS cv, sr.field_total_survey_required_value AS rs  
+$query = "SELECT com.field_completes_value AS cv, sr.field_total_survey_required_value AS rs
           FROM node__field_total_survey_required AS sr
           JOIN node__field_completes AS com ON sr.entity_id = com.entity_id
           WHERE sr.entity_id = ? ";
@@ -35,7 +35,7 @@ if (!empty($result1[0]['cv']) && !empty($result1[0]['rs']) && ($result1[0]['cv']
   $survey_link = getRedurectUrl($conn, $survey_map_id);
   $survey_link = str_replace("xxxx", $id, $survey_link);
   Redirect($survey_link, false);
-  die;  
+  die;
 }
 /* Validate required survey for a partner completed - End here */
 
@@ -70,10 +70,9 @@ if ($survey_map_id) {
         $ins_data['session_id'] = $sessionid;
         $ins_data['survey_map_id'] = $survey_map_id;
         $ins_data['location'] = $u_location;
-        $ins_data['created'] = strtotime('now');
-        $ins_data['changed'] = 0;
+        $ins_data['created'] = $ins_data['changed'] = strtotime('now');
 
-        $query = "INSERT INTO respondents_term(id, resp_id, partner_id, session_id, survey_id, adid, outcome, location, created, changed) 
+        $query = "INSERT INTO respondents_term(id, resp_id, partner_id, session_id, survey_id, adid, outcome, location, created, changed)
         VALUES (NULL, :resp_id, :partner_id, :session_id, :survey_map_id, 'Partner',  'DROPOFF', :location, :created, :changed) ";
         $result = $conn->prepare($query);
         $result->execute($ins_data);
@@ -91,7 +90,7 @@ if ($survey_map_id) {
 
 
 function getSurveyUrl($conn, $survey_map_id) {
-  $query = "SELECT sl.field_survey_link_value AS survey_link  
+  $query = "SELECT sl.field_survey_link_value AS survey_link
                   FROM node__field_survey_link AS sl
                   JOIN node__field_survey_name as sn ON sl.entity_id = sn.field_survey_name_target_id
                   WHERE sn.entity_id = ? ";
@@ -103,7 +102,7 @@ function getSurveyUrl($conn, $survey_map_id) {
 }
 
 function getRedurectUrl($conn, $survey_map_id) {
-  $query = "SELECT qf.field_quota_full_redirect_value AS qf_link  
+  $query = "SELECT qf.field_quota_full_redirect_value AS qf_link
                   FROM node__field_quota_full_redirect AS qf
                   WHERE qf.entity_id = ? ";
   $result = $conn->prepare($query);

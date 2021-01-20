@@ -25,7 +25,7 @@ $arr['partner_id'] = $result1[0]['partner_id'];
 $arr['adid'] = $result1[0]['adid'];
 
 /* Validate required survey for a partner completed - Start here */
-$query = "SELECT com.field_completes_value AS cv, sr.field_total_survey_required_value AS rs  
+$query = "SELECT com.field_completes_value AS cv, sr.field_total_survey_required_value AS rs
           FROM node__field_total_survey_required AS sr
           JOIN node__field_completes AS com ON sr.entity_id = com.entity_id
           WHERE sr.entity_id = ? ";
@@ -37,77 +37,55 @@ if ($result1[0]['cv'] > $result1[0]['rs']) {
   $survey_link = getRedurectUrl($conn, $arr['survey_id']);
   // $survey_link = str_replace("xxxx", $id, $survey_link);
   Redirect($survey_link, false);
-  die;  
+  die;
 }
 /* Validate required survey for a partner completed - End here */
 
 switch ($arr['status']) {
   case "comp":
-    $query = "UPDATE respondents_term AS res 
+    $query = "UPDATE respondents_term AS res
       JOIN node__field_completes AS com ON res.survey_id = com.entity_id
-      SET com.field_completes_value = CASE 
-        WHEN res.changed = 0 THEN com.field_completes_value + 1 
-        ELSE 
-          com.field_completes_value
-        END
+      SET com.field_completes_value = com.field_completes_value + 1
     WHERE com.entity_id = ? AND res.resp_id = ? ;";
 
     $query .= "UPDATE respondents_term AS res
-      SET res.outcome = CASE
-        WHEN res.changed = 0 THEN 'Complete'
-        ELSE 
-          res.outcome
-        END,
+      SET res.outcome = 'Complete',
         res.changed = '". strtotime('now') ."'
       WHERE res.resp_id = ? ;";
   break;
 
   case "term":
-    $query = "UPDATE respondents_term AS res      
+    $query = "UPDATE respondents_term AS res
     JOIN node__field_terminates AS ter ON res.survey_id = ter.entity_id
-      set ter.field_terminates_value = case 
-        WHEN res.changed = 0 THEN ter.field_terminates_value + 1 
-          else ter.field_terminates_value
-        END
+      set ter.field_terminates_value = cter.field_terminates_value + 1
       WHERE ter.entity_id = ? AND res.resp_id = ? ;";
 
     $query .= "UPDATE respondents_term AS res
-      SET res.outcome = CASE 
-        WHEN res.changed = 0 THEN 'Terminate'
-        ELSE 
-          res.outcome
-        END
+      SET res.outcome = 'Terminate', res.changed = '". strtotime('now') ."'
       WHERE res.resp_id = ? ;";
   break;
-  
+
   // I don't think so need below pice of code because we already handle this condition.
   case "quot":
     $query = "UPDATE respondents_term AS res
       JOIN node__field_quota AS quo ON res.survey_id = quo.entity_id
-      SET quo.field_quota_value = CASE 
-        WHEN res.changed = 0 THEN quo.field_quota_value + 1 
-        ELSE 
-          quo.field_quota_value
-        END
+      SET quo.field_quota_value = quo.field_quota_value + 1
       WHERE quo.entity_id = ? AND res.resp_id = ? ;";
 
     $query .= "UPDATE respondents_term AS res
-      SET res.outcome = CASE
-        WHEN res.changed = 0 THEN 'Quota-Full'
-        ELSE 
-          res.outcome
-        END
-      WHERE res.resp_id = :id ;";
+      SET res.outcome = 'Quota-Full',
+       res.changed = '". strtotime('now') ."'
+      WHERE res.resp_id = ? ;";
   break;
 
   case "test":
     $query .= "UPDATE respondents_term as res
       SET res.outcome = CASE
       WHEN res.changed = 0 THEN 'Test'
-      ELSE 
+      ELSE
         res.outcome
       END
-      WHERE res.resp_id = :id ;";
+      WHERE res.resp_id = ?";
 }
 
 try {
@@ -120,14 +98,14 @@ $result->execute([$arr['survey_id'], $arr['id'], $arr['id']]);
     if ($arr['adid'] == 'Partner') {
       switch ($arr['status']) {
         case 'comp' :
-          $table = 'node__field_completes_redirect'; 
+          $table = 'node__field_completes_redirect';
           $redirect = 'field_completes_redirect_value';
           break;
-        case 'term' : 
+        case 'term' :
           $table = 'node__field_terminates_redirect';
           $redirect = 'field_terminates_redirect_value';
           break;
-        case 'quot' : 
+        case 'quot' :
           $table = 'node__field_quota_full_redirect';
           $redirect = 'field_quota_full_redirect_value';
       }
@@ -150,7 +128,7 @@ $result->execute([$arr['survey_id'], $arr['id'], $arr['id']]);
 
 
 function getRedurectUrl($conn, $survey_map_id) {
-  $query = "SELECT qf.field_quota_full_redirect_value AS qf_link  
+  $query = "SELECT qf.field_quota_full_redirect_value AS qf_link
                   FROM node__field_quota_full_redirect AS qf
                   WHERE qf.entity_id = ? ";
   $result = $conn->prepare($query);
