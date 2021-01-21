@@ -41,7 +41,7 @@ function custom_survey_form_alter(&$form, FormStateInterface $form_state, $form_
         $form['field_survey_name']['widget']['#options'] = get_survey_option($company_id);
       }
       elseif(!empty($form['field_company_name']['widget']['#default_value'][0])) {
-        $company_id = $form['field_survey_name']['widget']['#default_value'][0];
+        $company_id = $form['field_company_name']['widget']['#default_value'][0];
         $form['field_survey_name']['widget']['#options'] = get_survey_option($company_id);
       }
 
