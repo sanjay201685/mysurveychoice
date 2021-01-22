@@ -2,7 +2,24 @@
 require_once 'connection.php';
 
 session_start();
-$partner_id =  (string) filter_input(INPUT_GET, 'id');
+$query_str = $_REQUEST;
+$query = "SELECT isl.field_identifier_of_survey_link_value AS identifier
+          FROM node__field_identifier_of_survey_link AS isl
+          LEFT JOIN node__field_survey_name as sn ON isl.entity_id = sn.field_survey_name_target_id
+          WHERE sn.entity_id = ? ";
+$result = $conn->prepare($query);
+$result->execute([$_REQUEST['srv']]);
+$result1 = $result->fetchAll(PDO::FETCH_ASSOC);
+$identifier = $result1[0]['identifier'];
+
+$key_exist = array_key_exists($identifier, $query_str);
+
+if (!$key_exist) {
+  echo 'key not exist';
+  die;
+}
+
+$partner_id =  (string) filter_input(INPUT_GET, $identifier);
 $survey_map_id = (string) filter_input(INPUT_GET, 'srv');
 
 $sessionid = session_id();
@@ -87,7 +104,6 @@ if ($survey_map_id) {
     Redirect($survey_link, false);
     die;
 }
-
 
 function getSurveyUrl($conn, $survey_map_id) {
   $query = "SELECT sl.field_survey_link_value AS survey_link
